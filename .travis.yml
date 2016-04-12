@@ -1,0 +1,27 @@
+language: python
+
+cache: pip
+
+python:
+  - "3.5"
+
+services:
+  - docker
+
+env:
+  global:
+    - fast_finish: true
+  matrix:
+  - TEST_SUITE='base'
+  - TEST_SUITE='base/build'
+  - TEST_SUITE='base/build/php'
+  - TEST_SUITE='base/build/php/5.6'
+  - TEST_SUITE='base/build/php/5.6/composer'
+  - TEST_SUITE='base/build/php/5.6/fpm'
+  - TEST_SUITE='base/build/php/5.6/fpm/composer'
+
+before_install:
+  - pip install ndg-httpsclient peru
+
+script:
+  - cd $TEST_SUITE && make build && make clean
