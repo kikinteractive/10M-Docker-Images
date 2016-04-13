@@ -5,4 +5,4 @@ https://github.com/rounds/10M-Docker-Images/wiki
 
 
 [travis image]: https://travis-ci.org/rounds/10M-Docker-Images.svg?branch=master
-[travis]: https://travis-ci.com/rounds/10M-Docker-Images
+[travis]: https://travis-ci.org/rounds/10M-Docker-Images
