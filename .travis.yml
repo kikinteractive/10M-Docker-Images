@@ -18,7 +18,6 @@ env:
   - IMAGE=graphite_carbon_relay
   - IMAGE=graphite_web
   - IMAGE=hubot
-  - IMAGE=include
   - IMAGE=java
   - IMAGE=kibana
   - IMAGE=logstash-forwarder
