@@ -1,0 +1,36 @@
+sudo: required
+services: docker
+language: c
+
+matrix:
+  fast_finish: true
+env:
+  - IMAGE=annona
+  - IMAGE=base
+  - IMAGE=build-go
+  - IMAGE=build
+  - IMAGE=elastic_search
+  - IMAGE=elastic_search_plugins
+  - IMAGE=git_client
+  - IMAGE=go-slackjira
+  - IMAGE=graphite_carbon
+  - IMAGE=graphite_carbon_cache
+  - IMAGE=graphite_carbon_relay
+  - IMAGE=graphite_web
+  - IMAGE=hubot
+  - IMAGE=include
+  - IMAGE=java
+  - IMAGE=kibana
+  - IMAGE=logstash-forwarder
+  - IMAGE=logstash-server
+  - IMAGE=nginx
+  - IMAGE=nginx_redirect_to_ssl
+  - IMAGE=py-ssj
+  - IMAGE=python-alpine
+  - IMAGE=python
+  - IMAGE=redis
+  - IMAGE=sensu
+  - IMAGE=sshuttle
+
+script:
+  - docker build $IMAGE
