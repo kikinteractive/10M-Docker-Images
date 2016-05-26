@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GEOIP_CONF=/usr/local/share/GeoIP/GeoIP.conf
+GEOIP_CONF=/tmp/GeoIP.conf
 
 echo UserId ${MAXMIND_USER_ID:-999999} > $GEOIP_CONF
 echo LicenseKey ${MAXMIND_LICENSE:-000000000000} >> $GEOIP_CONF
