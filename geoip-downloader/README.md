@@ -10,7 +10,7 @@ Due to the split of geoipupdate into a separate package this process is slightly
 
 ```bash
 mkdir -p ./databases 
-docker build -t geoipupdate -f Dockerfile.geoipupdate . 
+docker build -t geoipupdate -f Dockerfile . 
 docker run -v $(pwd)/databases:/usr/local/share/GeoIP geoipupdate 
 ```
 
