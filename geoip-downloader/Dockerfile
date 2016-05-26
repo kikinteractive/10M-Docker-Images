@@ -1,8 +1,14 @@
-FROM gliderlabs/alpine:3.1
+FROM alpine:3.1
 
-VOLUME /usr/share/GeoIP
-RUN apk --update add geoip
-ADD databases /usr/share/GeoIP
-ADD databases/GeoIP.conf /etc/
+# set up compiler
+RUN apk --update add alpine-sdk zlib-dev curl-dev geoip geoip-dev && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["geoiplookup"]
+# no apk for geoipupdate, need to build it ourselves
+ADD geoipupdate-2.2.1.tar.gz /
+WORKDIR /geoipupdate-2.2.1
+RUN ./configure && make && make install
+
+# script generates config and updates
+ADD ./geoipupdate.sh /
+
+CMD ["sh","/geoipupdate.sh"]
