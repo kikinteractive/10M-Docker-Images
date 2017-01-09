@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This repository is no longer being maintained.
+
 # 10M-Docker-Images [![Build Status][travis image]][travis]
 
 Please see wiki:
